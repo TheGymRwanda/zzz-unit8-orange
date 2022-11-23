@@ -1,9 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face{
     font-family: "NeufileGrotesk";
     src: url('https://res.cloudinary.com/dllcm941d/raw/upload/v1669109233/NeufileGrotesk-Regular_lq71fv.woff2');
   }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
   
