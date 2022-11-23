@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import Wrapper from '../sections/Wrapper'
 
 const Header = () => {
