@@ -1,5 +1,14 @@
 ### Task Description _(❗️Required)_
 
+### Type of Task
+
+- [ ] fix
+- [ ] chore
+- [ ] feat
+- [ ] refactor
+- [ ] perf
+- [ ] docs
+
 ### Guidelines
 
 - [ ] Does your code follow ES6+ syntax?
