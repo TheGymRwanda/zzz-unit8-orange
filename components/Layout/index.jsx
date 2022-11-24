@@ -1,9 +1,10 @@
 import Header from './Header'
-
+import CompanyOverview from '../sections/CompanyOverview'
 const Layout = ({children}) => {
   return (
     <div className="font-neuf">
         <Header />
+        <CompanyOverview/>
         {children}
     </div>
   )
