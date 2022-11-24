@@ -29,6 +29,8 @@ module.exports = {
         '2.5xl': '1.75rem',
         '5.5xl': '3.25rem',
         '6.5xl': '4rem',
+        '16': '4rem',
+        "13": "3.25rem"
       },
       lineHeight: {
         extra : "1.66",
@@ -36,7 +38,9 @@ module.exports = {
         loose: "1.2143",
         snug: "1.4",
         'extra-snug': "1.6",       
-        tighter: "1.33",      
+        tighter: "1.33",
+        '16': '4rem',
+        '18': '4.5rem'     
       },
       letterSpacing: {
         tight: "0.02em",
@@ -46,13 +50,21 @@ module.exports = {
       },
       maxWidth: {
         "8xl": "90rem",
+        "202.75": "50.6875rem",
         "201.5": "50.375rem",
         "189.25": "47.3125rem"
       }, 
       spacing: {
         sm: "0.188rem",
-        "201.5": "50.375rem"
-      },  
+        "201.5": "50.375rem",
+        "34": "8.5rem",
+        "15": "3.75rem",
+        "13": "3.25rem",
+        "2.75": "0.6875rem"
+      },
+      dropShadow: {
+        "pr": "1px 1px 14px rgba(0, 0, 0, 0.1)"
+      }
     },
   },
   plugins: [],
