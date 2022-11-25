@@ -14,8 +14,10 @@ const ProjectItem = ({name, imgUri, description}) => {
     <div className="flex flex-col xl:flex-row items-start">
         
         <ProjectTitle name={name} toggleImgState={toggleImgState} />
-        <div ref={imgRef} className="opacity-0 h-0 xl:h-full overflow-hidden xl:absolute right-0 top-0 max-w-202.75 transition-all duration-300 -translate-x-10">
-            <img src={imgUri} className="max-w-full drop-shadow-pr rounded-xl" alt={name} />
+        <div ref={imgRef} className="opacity-0 h-0 xl:h-full overflow-hidden xl:absolute right-0 top-0 max-w-202.75 transition-all duration-300 -translate-x-10 drop-shadow-pr">
+            <div className="border border-primaryGray-50  rounded-xl overflow-hidden">
+              <img src={imgUri} className="max-w-full" alt={name} />
+            </div>
             <div className="text-2xl mt-2">{description}</div>
         </div>
     </div>

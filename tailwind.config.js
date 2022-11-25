@@ -12,6 +12,9 @@ module.exports = {
       borderRadius: {
         base: "1.1875rem",
       },
+      boxShadow: {
+        "pr": "1px 1px 14px rgba(0, 0, 0, 0.1)"
+      },
       colors: {  
         primaryGray: {
           50: "#E2E2E2",
@@ -19,6 +22,7 @@ module.exports = {
           200: "#F4F4F4",
           300: "#9A9A9A",
           400: "#878787", 
+          
         },
         purple: '#5602E0',
       },
