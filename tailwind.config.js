@@ -30,6 +30,9 @@ module.exports = {
         '5.5xl': '3.25rem',
         '6.5xl': '4rem',
       },
+      height: {
+        "412": "25.75rem",
+      },
       lineHeight: {
         extra : "1.66",
         light: "1.2308",
@@ -44,6 +47,10 @@ module.exports = {
         wide: "0.01em",
         wider: "0.0125em"
       },
+      maxHeight:{
+        "412": "25.75rem",
+      }
+      ,
       maxWidth: {
         "8xl": "90rem",
         "201.5": "50.375rem",
@@ -56,7 +63,11 @@ module.exports = {
         "8.4": "3.55375rem",
         "10.5": "2.5625rem",
         "201.5": "50.375rem"
-      },  
+      }, 
+      width:{
+        "757": "47.3125rem",
+        "811": "50.6875rem",
+      } 
     },
   },
   plugins: [],
