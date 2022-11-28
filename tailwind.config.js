@@ -51,8 +51,12 @@ module.exports = {
       }, 
       spacing: {
         sm: "0.188rem",
+        "6.25": "1.5625rem",
         "201.5": "50.375rem"
-      },  
+      }, 
+      margin: {
+        "1.75": "0.4375rem"
+      } 
     },
   },
   plugins: [],
