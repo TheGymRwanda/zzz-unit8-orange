@@ -1,15 +1,25 @@
-import Image from 'next/image'
+import Image from "next/image";
 
-const ProjectTitle = ({name, toggleImgState}) => {
+const ProjectTitle = ({ name, toggleImgState }) => {
   return (
-    <div className="cursor-pointer relative group" onMouseEnter={toggleImgState} onMouseLeave={toggleImgState}>
-        <div className="text-13 leading-16 sm:text-16 sm:leading-18">{name}</div>
-        <div className="overflow-hidden w-full absolute bottom-0">
-            <div className="-translate-x-full w-2/4 border-b-2 border-black group-hover:w-full group-hover:translate-x-0 transition-all duration-300 hidden xl:block"></div>
-        </div>
-        <Image src="/assets/icons/arrow-link.svg" alt="arrow" width={14} height={14} className="absolute -right-4 top-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden xl:block" />
+    <div
+      className="cursor-pointer relative overflow-hidden  group flex items-start"
+      onMouseEnter={toggleImgState}
+      onMouseLeave={toggleImgState}
+    >
+      <div className="text-13 leading-16 sm:text-16 sm:leading-18">{name}</div>
+      <div className="w-full absolute bottom-1 left-1.5">
+        <div className="opacity-0 w-full border-b-2 border-black group-hover:opacity-100 transition-all hidden xl:block"></div>
+      </div>
+      <Image
+        src="/assets/icons/arrow-link.svg"
+        alt="arrow"
+        width={14}
+        height={14}
+        className=" opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden xl:block mt-[14px]"
+      />
     </div>
-  )
-}
+  );
+};
 
 export default ProjectTitle;
