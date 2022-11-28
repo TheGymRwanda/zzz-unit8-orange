@@ -1,11 +1,13 @@
 import Image from "next/image";
 
-const ProjectTitle = ({ name, toggleImgState }) => {
+const ProjectTitle = ({ name, toggleImgState, openProjectPage, width }) => {
+
   return (
     <div
       className="cursor-pointer relative overflow-hidden  group flex items-start"
       onMouseEnter={toggleImgState}
       onMouseLeave={toggleImgState}
+      onClick={width > 1024 ? openProjectPage: () =>{}}
     >
       <div className="text-13 leading-16 sm:text-16 sm:leading-18">{name}</div>
       <div className="w-full absolute bottom-1 left-1.5">
@@ -17,6 +19,7 @@ const ProjectTitle = ({ name, toggleImgState }) => {
         width={14}
         height={14}
         className=" opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden xl:block mt-[14px]"
+        onClick={width < 1024 ? openProjectPage: () =>{}}
       />
     </div>
   );
