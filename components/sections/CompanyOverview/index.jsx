@@ -53,7 +53,8 @@ const CompanyOverview = () => {
                             data.map((item, index) =>(
                                 <li className="space-y-5 relative" key={index}>
                                     <button className={"cursor-pointer text-2xl leading-extra -tracking-tighter transition-all ease-in-out duration-300 "+(index===activeTabIndex?" text-purple ": " text-primaryGray-300 ")} key={index} onClick={() =>{setActiveTabIndex(index); setActiveTab(item)}} id={index}>
-                                      {item.title}
+                                      {item.title==="Hiring"?<><span className="hidden lg:block">Hiring</span><span className=" lg:hidden">Employment</span></>
+                                      :<span>{item?.title}</span>}
                                     </button>
                                     {index===activeTabIndex?(<Motion.div className="absolute mt-0 bottom-1 inset-x-0 h-0.2 bg-purple" layoutId="underline"/>):null}
                                 </li>
@@ -69,7 +70,7 @@ const CompanyOverview = () => {
                         data.map((item, index) =>
                             <li className="space-y-4.5" key={index}>
                                 <div onClick={()=>{changeActiveTabMobile(index);setActiveTab(item)}} className={"flex items-center justify-between border-b "+ (activeTabIndex===index?"border-purple":"border-primaryGray-300")}>
-                                    <p className={"cursor-default text-xl -tracking-wider "+(activeTabIndex===index?"text-purple ":"")}> {item.title}</p>
+                                    <p className={"cursor-default text-xl -tracking-wider "+(activeTabIndex===index?"text-purple ":"")}> {item?.title==="hiring"?"Employment":item.title}</p>
                                     <div className={`transition-all duration-300 ease-out ${activeTabIndex===index? "rotate-180": ""}`}>
                                         <ArrowIcon variant={activeTabIndex===index? " text-purple ": " text-black "}/>
                                     </div>
