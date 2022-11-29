@@ -18,7 +18,7 @@ const ProjectTitle = ({ name, toggleImgState, openProjectPage, width }) => {
         alt="arrow"
         width={14}
         height={14}
-        className=" opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden xl:block mt-[14px]"
+        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden xl:block mt-3.5"
         onClick={width < 1024 ? openProjectPage: () =>{}}
       />
     </div>
