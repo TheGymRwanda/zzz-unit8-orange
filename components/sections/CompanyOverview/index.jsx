@@ -6,7 +6,7 @@ import LinkItem from './../../ui/LinkItem';
 import {motion as Motion} from 'framer-motion';
 const data = [
     {
-        title: "About",
+        title: "About us",
         text: <>
             We believe that blockchain technology has the potential to shift financial models as we know them, creating revenue streams that are more sustainable and fair for users. We envision a future in which financial infrastructures are rather decentralised and horizontal, in which any member can have a say. Through its immutability, blockchain technology provides trustworthy infrastructures that allow cooperation on a large scale.
             <div className="inline-block underline hover:no-underline underline-offset-2"><LinkItem to="https://medium.com/@moritzfelipe/blockchain-the-internet-for-cooperation-37a606bb3c0" underlined>Learn more</LinkItem></div>
@@ -56,7 +56,7 @@ const CompanyOverview = () => {
                                       {item?.title === "Hiring" ? <><span className="hidden lg:block">Hiring</span><span className="lg:hidden">Employment</span></>
                                       :<span>{item?.title}</span>}
                                     </button>
-                                    {index === activeTabIndex ? (<Motion.div className="absolute mt-0 bottom-1 inset-x-0 h-0.2 bg-purple" layoutId="underline"/>) : null}
+                                    {index === activeTabIndex ? (<Motion.div transition={{ duration: 0.3 }} className="absolute mt-0 bottom-1 inset-x-0 h-0.2 bg-purple" layoutId="underline"/>) : null}
                                 </li>
                             ))
                         }
