@@ -12,10 +12,10 @@ function Footer() {
           </p>
         </div>
         <div>
-          <LinkItem to={"https://twitter.com/apeunit"}>Twitter</LinkItem>
+          <LinkItem to="https://twitter.com/apeunit">Twitter</LinkItem>
 
-          <LinkItem to={"https://www.facebook.com/apeunit/"}>Facebook</LinkItem>
-          <LinkItem to={"https://de.linkedin.com/company/ape-unit"}>
+          <LinkItem to="https://www.facebook.com/apeunit/">Facebook</LinkItem>
+          <LinkItem to="https://de.linkedin.com/company/ape-unit">
             LinkedIn
           </LinkItem>
         </div>
