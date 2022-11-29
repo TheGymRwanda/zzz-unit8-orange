@@ -1,6 +1,5 @@
 import LinkItem from "../ui/LinkItem";
 import Wrapper from "../sections/Wrapper";
-
 function Footer() {
   return (
     <Wrapper>
@@ -8,12 +7,13 @@ function Footer() {
         <div>
           <p>Ape Unit GmbH</p>
           <p>
-            Waldemarstraße 38,<br></br> 10999 Berlin
+            Waldemarstraße 38,
+            <br />
+            10999 Berlin
           </p>
         </div>
         <div>
           <LinkItem to="https://twitter.com/apeunit">Twitter</LinkItem>
-
           <LinkItem to="https://www.facebook.com/apeunit/">Facebook</LinkItem>
           <LinkItem to="https://de.linkedin.com/company/ape-unit">
             LinkedIn
