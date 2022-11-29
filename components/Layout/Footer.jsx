@@ -1,6 +1,5 @@
 import LinkItem from "../ui/LinkItem";
 import Wrapper from "../sections/Wrapper";
-import Link from "next/link";
 
 function Footer() {
   return (
