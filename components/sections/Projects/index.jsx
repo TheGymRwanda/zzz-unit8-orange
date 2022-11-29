@@ -1,4 +1,4 @@
-import projectsData from '../../../data/projects'
+import projectsData from '/data/projects'
 import Title from '../../ui/Title'
 import Wrapper from '../Wrapper'
 import ProjectItem from './ProjectItem'

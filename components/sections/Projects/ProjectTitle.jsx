@@ -6,7 +6,7 @@ const ProjectTitle = ({ name, toggleImgState, openProjectPage, width }) => {
     <div
       className="cursor-pointer relative overflow-hidden  group flex items-start"
       onMouseEnter={toggleImgState}
-      onMouseLeave={toggleImgState}
+      // onMouseLeave={toggleImgState}
       onClick={width > 1024 ? openProjectPage: () =>{}}
     >
       <div className="text-13 leading-16 sm:text-16 sm:leading-18">{name}</div>

@@ -23,11 +23,11 @@ const ProjectItem = ({ name, imgUri, description, projectUrl }) => {
   };
 
   return (
-    <div className="flex flex-col xl:flex-row items-start">
+    <div className="flex flex-col xl:flex-row items-start" onMouseLeave={() =>imgRef.current.classList.remove("show-img")}>
       <ProjectTitle name={name} toggleImgState={toggleImgState} openProjectPage={openProjectPage} width={width} />
       <div
         ref={imgRef}
-        className="opacity-0 h-0 xl:h-full overflow-hidden xl:absolute right-0 top-0 max-w-202.75 transition-all duration-700 drop-shadow-pr"
+        className="opacity-0 h-0 xl:h-full overflow-hidden xl:absolute right-0 top-0 max-w-202.75 transition-all duration-700 drop-shadow-pr lg:-z-10"
       >
         <div className="border border-primaryGray-50  rounded-xl overflow-hidden">
           <img src={imgUri} className="max-w-full" alt={name} onClick={width < 1024 ? openProjectPage: () =>{}} />
