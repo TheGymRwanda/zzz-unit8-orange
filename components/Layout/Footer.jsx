@@ -24,5 +24,4 @@ function Footer() {
     </Wrapper>
   );
 }
-
 export default Footer;
