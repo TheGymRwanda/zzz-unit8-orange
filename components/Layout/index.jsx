@@ -4,7 +4,6 @@ const Layout = ({children}) => {
   return (
     <div className="font-neuf">
         <Header />
-        <CompanyOverview/>
         {children}
     </div>
   )
