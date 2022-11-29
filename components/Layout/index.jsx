@@ -1,12 +1,13 @@
-import Header from './Header'
-
-const Layout = ({children}) => {
+import Header from "./Header";
+import Footer from "./Footer";
+const Layout = ({ children }) => {
   return (
     <div className="font-neuf">
-        <Header />
-        {children}
+      <Header />
+      <Footer />
+      {children}
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
