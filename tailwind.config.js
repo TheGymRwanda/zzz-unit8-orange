@@ -22,12 +22,11 @@ module.exports = {
           200: "#F4F4F4",
           300: "#9A9A9A",
           400: "#878787", 
-          
         },
-        purple: '#5602E0',
+        purple: "#5602E0",
       },
       fontFamily: {
-        'neuf': ['NeufileGrotesk'],
+        neuf: ["NeufileGrotesk"],
       },
       fontSize: {
         '2.5xl': '1.75rem',
@@ -37,7 +36,7 @@ module.exports = {
         "13": "3.25rem"
       },
       lineHeight: {
-        extra : "1.66",
+        extra: "1.66",
         light: "1.2308",
         loose: "1.2143",
         snug: "1.4",
@@ -50,38 +49,40 @@ module.exports = {
         tight: "0.02em",
         tighter: "0.015em",
         wide: "0.01em",
-        wider: "0.0125em"
+        wider: "0.0125em",
       },
       maxWidth: {
         "8xl": "90rem",
-        "202.75": "50.6875rem",
-        "201.5": "50.375rem",
-        "189.25": "47.3125rem"
-      }, 
+        202.75: "50.6875rem",
+        201.5: "50.375rem",
+        189.25: "47.3125rem",
+      },
       spacing: {
         sm: "0.188rem",
-        "201.5": "50.375rem",
-        "34": "8.5rem",
-        "15": "3.75rem",
-        "13": "3.25rem",
-        "2.75": "0.6875rem"
+        201.5: "50.375rem",
+        91: "5.6875rem",
+        34: "8.5rem",
+        31: "7.75rem",
+        15: "3.75rem",
+        13: "3.25rem",
+        12.5: "3.0625rem",
+        6.25: "1.5625rem",
+        2.75: "0.6875rem",
       },
       dropShadow: {
-        "pr": "1px 1px 14px rgba(0, 0, 0, 0.1)",
-        "6.25": "1.5625rem",
-        "201.5": "50.375rem"
-      }, 
+        pr: "1px 1px 14px rgba(0, 0, 0, 0.1)",
+      },
       margin: {
-        "1.75": "0.4375rem"
-      }, 
+        1.75: "0.4375rem",
+      },
       width: {
-        "290": "18.125rem",
-        "310": "19.375rem"
+        290: "18.125rem",
+        310: "19.375rem",
       },
       gap: {
-        "6.5": "1.5625rem"
-      }
+        6.5: "1.5625rem",
+      },
     },
   },
   plugins: [],
-}
+};
