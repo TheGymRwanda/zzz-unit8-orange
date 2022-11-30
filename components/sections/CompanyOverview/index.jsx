@@ -60,4 +60,5 @@ const CompanyOverview = () => {
         </Wrapper>
     );
 }
+
 export default CompanyOverview;

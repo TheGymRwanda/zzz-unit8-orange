@@ -6,4 +6,5 @@ const Overview = ({paragraph}) => {
        </div>
     );
 }
+
 export default Overview;
