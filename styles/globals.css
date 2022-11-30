@@ -5,4 +5,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+
+.show-img{
+  @apply opacity-100 translate-x-0 h-full mb-15
+}
