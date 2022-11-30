@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
-import ArrowIcon from '../../ui/ArrowIcon';
-import Wrapper from '../Wrapper';
-import Overview from './Overview';
-import LinkItem from './../../ui/LinkItem';
-import {motion as Motion} from 'framer-motion';
+import { useEffect, useState } from "react";
+import ArrowIcon from "../../ui/ArrowIcon";
+import Wrapper from "../Wrapper";
+import Overview from "./Overview";
+import LinkItem from "./../../ui/LinkItem";
+import {motion as Motion} from "framer-motion";
+
 const data = [
     {
         title: "About us",
@@ -29,6 +30,7 @@ const data = [
         </>,
     }
 ];
+
 const CompanyOverview = () => {
     const [activeTab, setActiveTab] = useState(data[0]);
     const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -43,6 +45,7 @@ const CompanyOverview = () => {
         window.addEventListener("resize", handleResize)
         return ()=> window.removeEventListener("resize", handleResize)
     },[activeTab])
+    
     return (
         <Wrapper>
             <div className="hidden sm:flex justify-end mt-24">
