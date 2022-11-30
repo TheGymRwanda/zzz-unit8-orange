@@ -24,9 +24,9 @@ function Footer() {
             LinkedIn
           </LinkItem>
         </div>
-        <div>
+        <div className="flex gap-x-1">
           <Link href="https://apeunit.com/impressum.txt" target="_blank">
-            Impressum{" "}
+            Impressum
           </Link>
           /
           <Link href="https://apeunit.com/datenschutz.txt" target="_blank">
