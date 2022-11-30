@@ -8,7 +8,8 @@ import companyTabs from "./../../../data/companyTabs";
 const CompanyOverview = () => {
     const [activeTab, setActiveTab] = useState(companyTabs[0]);
     const [activeTabIndex, setActiveTabIndex] = useState(0);
-    const changeActiveTabMobile= (tab)=> tab === activeTabIndex ? setActiveTabIndex(null): setActiveTabIndex(tab)
+    const changeActiveTabMobile = (tab)=> tab === activeTabIndex ? setActiveTabIndex(null): setActiveTabIndex(tab)
+    
     useEffect(()=> {
         const handleResize = () => {
             if (window.innerWidth >= 640 && !activeTabIndex){
