@@ -1,5 +1,6 @@
 import LinkItem from "../ui/LinkItem";
 import Wrapper from "../sections/Wrapper";
+import Link from "next/link";
 function Footer() {
   return (
     <Wrapper>
@@ -13,13 +14,25 @@ function Footer() {
           </p>
         </div>
         <div>
-          <LinkItem to="https://twitter.com/apeunit">Twitter</LinkItem>
-          <LinkItem to="https://www.facebook.com/apeunit/">Facebook</LinkItem>
-          <LinkItem to="https://de.linkedin.com/company/ape-unit">
+          <LinkItem to="https://twitter.com/apeunit" blank>
+            Twitter
+          </LinkItem>
+          <LinkItem to="https://www.facebook.com/apeunit/" blank>
+            Facebook
+          </LinkItem>
+          <LinkItem to="https://de.linkedin.com/company/ape-unit" blank>
             LinkedIn
           </LinkItem>
         </div>
-        <div>Impressum / Privacy</div>
+        <div>
+          <Link href="https://apeunit.com/impressum.txt" target="_blank">
+            Impressum{" "}
+          </Link>
+          /
+          <Link href="https://apeunit.com/datenschutz.txt" target="_blank">
+            Privacy
+          </Link>
+        </div>
       </div>
     </Wrapper>
   );
