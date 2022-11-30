@@ -68,6 +68,19 @@ module.exports = {
       dropShadow: {
         pr: "1px 1px 14px rgba(0, 0, 0, 0.1)",
       },
+        "6.25": "1.5625rem",
+        "201.5": "50.375rem"
+      }, 
+      margin: {
+        "1.75": "0.4375rem"
+      }, 
+      width: {
+        "290": "18.125rem",
+        "310": "19.375rem"
+      },
+      gap: {
+        "6.5": "1.5625rem"
+      }
     },
   },
   plugins: [],
