@@ -67,7 +67,7 @@ module.exports = {
         "2.75": "0.6875rem"
       },
       dropShadow: {
-        "pr": "1px 1px 14px rgba(0, 0, 0, 0.1)"
+        "pr": "1px 1px 14px rgba(0, 0, 0, 0.1)",
         "6.25": "1.5625rem",
         "201.5": "50.375rem"
       }, 
