@@ -12,13 +12,16 @@ module.exports = {
       borderRadius: {
         base: "1.1875rem",
       },
-      colors: {
+      boxShadow: {
+        "pr": "1px 1px 14px rgba(0, 0, 0, 0.1)"
+      },
+      colors: {  
         primaryGray: {
           50: "#E2E2E2",
           100: "#EDEDED",
           200: "#F4F4F4",
           300: "#9A9A9A",
-          400: "#878787",
+          400: "#878787", 
         },
         purple: "#5602E0",
       },
@@ -26,21 +29,21 @@ module.exports = {
         neuf: ["NeufileGrotesk"],
       },
       fontSize: {
-        "2.5xl": "1.75rem",
-        "5.5xl": "3.25rem",
-        "6.5xl": "4rem",
-        16: "4rem",
-        13: "3.25rem",
+        '2.5xl': '1.75rem',
+        '5.5xl': '3.25rem',
+        '6.5xl': '4rem',
+        '16': '4rem',
+        "13": "3.25rem"
       },
       lineHeight: {
         extra: "1.66",
         light: "1.2308",
         loose: "1.2143",
         snug: "1.4",
-        "extra-snug": "1.6",
+        'extra-snug': "1.6",       
         tighter: "1.33",
-        16: "4rem",
-        18: "4.5rem",
+        '16': '4rem',
+        '18': '4.5rem'     
       },
       letterSpacing: {
         tight: "0.02em",
