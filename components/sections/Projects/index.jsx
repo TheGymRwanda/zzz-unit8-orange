@@ -28,7 +28,7 @@ const Projects = () => {
                     {
                         projectsData.map((project, index) =>(
                             <div
-                                className={`overflow-hidden absolute right-0 max-w-202.75 transition-all duration-700 drop-shadow-pr lg:-z-10 ${active === index ? 'opacity-100': 'opacity-0'}`}
+                                className={`overflow-hidden absolute right-0 max-w-202.75 transition-all duration-700 drop-shadow-pr lg:-z-10 ${active === index ? "opacity-100": "opacity-0"}`}
                                 key={index}
                             >
                                 <div className="rounded-xl overflow-hidden">

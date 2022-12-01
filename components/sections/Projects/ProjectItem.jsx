@@ -14,14 +14,14 @@ const ProjectItem = ({ name, imgUri, description, projectUrl, setActive, active,
 
   const openProjectPage = () => window.open(projectUrl, "blank");
 
-  const toggleImgState = () => imgRef.current.classList.toggle("show-img");
+  const toggleImgState = () => imgRef.current.classList.toggle("project__image--active");
 
   return (
-    <div className="flex flex-col xl:flex-row items-start" onMouseEnter={() =>{setActive(index); toggleImgState()}} onMouseLeave={toggleImgState}>
+    <div className="flex flex-col xl:flex-row items-start project" onMouseEnter={() =>{setActive(index); toggleImgState()}} onMouseLeave={toggleImgState}>
       <ProjectTitle name={name} active={active} index={index} openProjectPage={openProjectPage} width={width} />
       <div
         ref={imgRef}
-        className="opacity-0 h-0 xl:hidden overflow-hidden max-w-202.75 transition-all duration-300 drop-shadow-pr"
+        className="opacity-0 h-0 xl:hidden overflow-hidden max-w-202.75 transition-all duration-500 drop-shadow-pr mt-0 lg:mt-4 project__image"
       >
         <div className="rounded-xl overflow-hidden">
           <img src={imgUri} className="max-w-full cursor-pointer" alt={name} onClick={width < 1024 ? openProjectPage: () =>{}} />
