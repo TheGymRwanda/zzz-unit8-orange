@@ -6,7 +6,7 @@ const LinkItem = ({ children, to, blank, underlined }) => {
     <Link
       href={to || "#"}
       target={blank && "_blank"}
-      className={`w-max flex items-baseline gap-1 group cursor-pointer ${underlined && 'underline'}`}
+      className={`w-max flex items-baseline gap-1 group cursor-pointer hover:no-underline underline-offset-2 ${underlined && 'underline'}`}
     >
       {children}
       <div className="w-max group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
