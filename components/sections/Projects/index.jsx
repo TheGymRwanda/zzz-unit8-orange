@@ -10,12 +10,12 @@ const Projects = () => {
 
   return (
     <Wrapper>
-        <div className="my-34 xl:pb-[432px]">
+        <div className="my-34 xl:pb-137">
             <Title name="Projects" />
             <div className="xl:flex items-start justify-between mt-2.75">
-                <div className="xl:h-28">
+                <div className="xl:h-48">
                     <div className="xl:absolute">
-                        <div className="flex flex-col relative">
+                        <div className="flex flex-col relative xl:gap-6.5">
                             {
                                 projectsData.map((project, index) =>(
                                     <ProjectItem {...project} key={index} index={index} setActive={setActive} active={active} />
