@@ -12,15 +12,9 @@ const ProjectItem = ({ name, imgUri, description, projectUrl, setActive, active,
     })()
   }, []);
 
-  const openProjectPage = () =>{
-    window.open(projectUrl, "blank")
-  };
+  const openProjectPage = () => window.open(projectUrl, "blank");
 
-  const toggleImgState = () => {
-    if (imgRef.current.classList.contains("show-img"))
-      imgRef.current.classList.remove("show-img");
-    else imgRef.current.classList.add("show-img");
-  };
+  const toggleImgState = () => imgRef.current.classList.toggle("show-img");
 
   return (
     <div className="flex flex-col xl:flex-row items-start" onMouseEnter={() =>{setActive(index); toggleImgState()}} onMouseLeave={toggleImgState}>
