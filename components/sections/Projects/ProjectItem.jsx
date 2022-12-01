@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import ProjectTitle from "./ProjectTitle";
 
 /* eslint-disable @next/next/no-img-element */
-const ProjectItem = ({ name, imgUri, description, projectUrl }) => {
+const ProjectItem = ({ name, imgUri, description, projectUrl, setActive, active, index }) => {
   const imgRef = useRef();
   const [width, setWidth] = useState();
 
@@ -23,14 +23,14 @@ const ProjectItem = ({ name, imgUri, description, projectUrl }) => {
   };
 
   return (
-    <div className="flex flex-col xl:flex-row items-start">
-      <ProjectTitle name={name} toggleImgState={toggleImgState} openProjectPage={openProjectPage} width={width} />
+    <div className="flex flex-col xl:flex-row items-start" onMouseEnter={() =>{setActive(index); toggleImgState()}} onMouseLeave={toggleImgState}>
+      <ProjectTitle name={name} active={active} index={index} openProjectPage={openProjectPage} width={width} />
       <div
         ref={imgRef}
-        className="opacity-0 h-0 xl:h-full overflow-hidden xl:absolute right-0 top-0 max-w-202.75 transition-all duration-700 drop-shadow-pr"
+        className="opacity-0 h-0 xl:hidden overflow-hidden max-w-202.75 transition-all duration-300 drop-shadow-pr"
       >
-        <div className="border border-primaryGray-50  rounded-xl overflow-hidden">
-          <img src={imgUri} className="max-w-full" alt={name} onClick={width < 1024 ? openProjectPage: () =>{}} />
+        <div className="rounded-xl overflow-hidden">
+          <img src={imgUri} className="max-w-full cursor-pointer" alt={name} onClick={width < 1024 ? openProjectPage: () =>{}} />
         </div>
         <div className="text-2xl mt-2">{description}</div>
       </div>
