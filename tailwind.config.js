@@ -35,9 +35,6 @@ module.exports = {
         16: "4rem",
         13: "3.25rem",
       },
-      height: {
-        412: "25.75rem",
-      },
       lineHeight: {
         extra: "1.66",
         light: "1.2308",
@@ -62,6 +59,9 @@ module.exports = {
         202.75: "50.6875rem",
         201.5: "50.375rem",
         189.25: "47.3125rem",
+      },
+      minHeight: {
+        412: "25.75rem",
       },
       spacing: {
         sm: "0.188rem",
