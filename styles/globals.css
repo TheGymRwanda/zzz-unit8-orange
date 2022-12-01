@@ -6,7 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.show-img{
-  @apply opacity-100 translate-x-0 h-full mb-15
+.project__image--active{
+  @apply h-56 opacity-100 mb-15 lg:h-121.25
 }
