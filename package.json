@@ -2,6 +2,11 @@
   "name": "unit8-orange",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "canvas",
+    "react",
+    "konva"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,9 +15,11 @@
   },
   "dependencies": {
     "framer-motion": "^7.6.15",
+    "konva": "^8.3.14",
     "next": "13.0.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-konva": "^18.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
