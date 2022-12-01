@@ -6,7 +6,7 @@ import ProjectItem from './ProjectItem'
 import { useState } from 'react'
 
 const Projects = () => {
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState();
 
   return (
     <Wrapper>
