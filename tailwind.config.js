@@ -32,8 +32,9 @@ module.exports = {
         "2.5xl": "1.75rem",
         "5.5xl": "3.25rem",
         "6.5xl": "4rem",
-        16: "4rem",
         13: "3.25rem",
+        16: "4rem",
+        21.5: "5.375rem",
       },
       lineHeight: {
         extra: "1.66",
