@@ -20,22 +20,21 @@ const CompanyOverview = () => {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [activeTab]);
+  }, [activeTab, activeTabIndex]);
 
   return (
     <Wrapper>
-      <div className="hidden sm:flex justify-end mt-24">
+      <div className="justify-end hidden mb-17.7 sm:mt-33 lg:mt-35.55 xl:mt-24 sm:flex">
         <div className="sm:w-full lg:w-757 xl:w-811">
           <ul className="flex gap-10.5 items-center py-5 relative">
             {companyTabs.map((item, index) => (
-              <li className="space-y-5 relative" key={index}>
+              <li className="relative space-y-5" key={index}>
                 <button
-                  className={
-                    "cursor-pointer text-2xl leading-extra -tracking-tighter transition-all ease-in-out duration-300 " +
-                    (index === activeTabIndex
+                  className={`cursor-pointer text-2xl leading-extra -tracking-tighter transition-all ease-in-out duration-300 ${
+                    index === activeTabIndex
                       ? "text-purple "
-                      : " text-primaryGray-300 ")
-                  }
+                      : " text-primaryGray-300 "
+                  }`}
                   key={index}
                   onClick={() => {
                     setActiveTabIndex(index);
@@ -55,10 +54,10 @@ const CompanyOverview = () => {
               </li>
             ))}
           </ul>
-          <Overview paragraph={activeTab} />
+          <Overview {...activeTab} />
         </div>
       </div>
-      <div className="block sm:hidden">
+      <div className="mt-20.25 mb-17.7 block sm:hidden">
         <ul className="space-y-5.1">
           {companyTabs.map((item, index) => (
             <li className="space-y-4.5" key={index}>
@@ -67,20 +66,17 @@ const CompanyOverview = () => {
                   changeActiveTabMobile(index);
                   setActiveTab(item);
                 }}
-                className={
-                  "flex items-center justify-between border-b " +
-                  (activeTabIndex === index
+                className={`flex items-center justify-between border-b ${
+                  activeTabIndex === index
                     ? "border-purple"
-                    : "border-primaryGray-300")
-                }
+                    : "border-primaryGray-300"
+                }`}
               >
                 <p
-                  className={
-                    "cursor-default text-xl -tracking-wider " +
-                    (activeTabIndex === index ? "text-purple " : "")
-                  }
+                  className={`cursor-default text-xl -tracking-wider ${
+                    activeTabIndex === index ? "text-purple " : ""
+                  }`}
                 >
-                  {" "}
                   {item?.title}
                 </p>
                 <div
@@ -99,7 +95,7 @@ const CompanyOverview = () => {
               </div>
               {activeTabIndex === index && (
                 <div className="pb-8.4">
-                  <Overview paragraph={activeTab} />
+                  <Overview {...activeTab} />
                 </div>
               )}
             </li>
