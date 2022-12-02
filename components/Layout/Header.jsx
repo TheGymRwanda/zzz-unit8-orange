@@ -10,10 +10,10 @@ const Header = () => {
         <div className="max-w-189.25 xl:max-w-201.5">
           Unit➇ is a pioneering technology company specialing in decentralised
           technologies that creates end-to-end digital experiences for protocols
-          including{" "}
+          including
           <span className="text-purple">
             Ethereum, Tezos, Near, Algorand, Celo
-          </span>{" "}
+          </span>
           and more. Its team of 2,500+ digital specialists across 30+ locations
           on 5 continents delivers pioneering work on a global scale with a
           boutique culture.{" "}
