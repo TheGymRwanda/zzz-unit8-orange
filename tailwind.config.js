@@ -57,6 +57,7 @@ module.exports = {
       },
       maxWidth: {
         "8xl": "90rem",
+        "9xl": "100rem",
         202.75: "50.6875rem",
         201.5: "50.375rem",
         189.25: "47.3125rem",
@@ -83,6 +84,7 @@ module.exports = {
         34: "8.5rem",
         35.55: "8.8875rem",
         91: "5.6875rem",
+        121.25: "30.3125rem",
         201.5: "50.375rem",
       },
       dropShadow: {
