@@ -5,9 +5,9 @@ import LinkItem from "../ui/LinkItem";
 const Header = () => {
   return (
     <Wrapper>
-      <div className="flex flex-col justify-between gap-5 py-12 text-xl lg:flex-row sm:text-2xl -tracking-tighter sm:tracking-normal">
+      <div className="flex flex-col justify-between gap-4.2 sm:gap-5.5 py-12 text-xl lg:flex-row sm:text-2xl -tracking-tighter sm:tracking-normal">
         <div>Ape Unit</div>
-        <div className="max-w-189.25 xl:max-w-201.5">
+        <div className="max-w-189.25 xl:max-w-201.5 md:pt-0">
           Unit➇ is a pioneering technology company specialing in decentralised
           technologies that creates end-to-end digital experiences for protocols
           including{" "}
