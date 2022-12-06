@@ -45,19 +45,19 @@ const Gallery = () => {
         onMouseMove={handleDisplayImage}
       >
         <Stage width={canvasWidth} height={canvasHeight}>
-        <Layer>
-          {image && (
-            <Image
-              image={image.image}
-              width={image.width}
-              height={image.height}
-              x={image.x}
-              y={image.y}
-              alt="gallery image"
-            />
-          )}
-        </Layer>
-      </Stage>
+          <Layer>
+            {image && (
+              <Image
+                image={image.image}
+                width={image.width}
+                height={image.height}
+                x={image.x}
+                y={image.y}
+                alt="gallery image"
+              />
+            )}
+          </Layer>
+        </Stage>
       </div>
       <div className="h-0 w-0 opacity-0">
         {images.map((picture, i) => (
@@ -66,11 +66,10 @@ const Gallery = () => {
             src={picture.url}
             key={i}
             ref={(el) => (imagesRef.current[i] = el)}
-            alt="blah"
+            alt="Image"
           />
         ))}
       </div>
-      {/*  */}
     </div>
   );
 };
