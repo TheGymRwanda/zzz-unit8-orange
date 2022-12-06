@@ -94,6 +94,9 @@ module.exports = {
       margin: {
         1.75: "0.4375rem",
       },
+      screens: {
+        mediumXl: "1440px",
+      },
       width: {
         290: "18.125rem",
         310: "19.375rem",
