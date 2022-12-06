@@ -8,10 +8,10 @@ const ProjectTitle = ({ name, openProjectPage, width, active, index }) => {
       onClick={width > 1024 ? openProjectPage: () =>{}}
     >
       <div className="text-13 leading-16 sm:text-21.5 sm:leading-18">{name}</div>
+      <div className="overflow-hidden w-full absolute -bottom-1.5 left-1.5">
+          <div className={`border-b-2 border-black transition-all duration-500 hidden xl:block ${(active === index ? "w-full translate-x-0": "-translate-x-full w-0")}`}></div>
+      </div>
       <div className={`transition-opacity duration-500 ${(active === index ? "opacity-100": "opacity-0")}`}>
-      <div className="overflow-hidden w-full absolute -bottom-1 left-1.5">
-            <div className={`border-b-2 border-black transition-all duration-500 hidden xl:block ${(active === index ? "w-full translate-x-0": "-translate-x-full w-2/4")}`}></div>
-        </div>
         <Image
           src="/assets/icons/arrow-link.svg"
           alt="arrow"
