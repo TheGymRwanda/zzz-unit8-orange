@@ -12,7 +12,7 @@ const Expertise = () => {
             {areasOfExpertise.map((area, index) => (
               <li
                 key={index}
-                className="text-xl md:text-2xl w-290 md:w-310 -leading-tighter border-b border-primaryGray-50"
+                className="text-xl border-b -tracking-wider sm:-tracking-tighter md:text-2xl w-290 md:w-310 border-primaryGray-50"
               >
                 {area}
               </li>
