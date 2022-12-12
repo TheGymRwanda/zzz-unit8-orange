@@ -43,7 +43,7 @@ const ProjectItem = ({
       />
       <div
         ref={imgRef}
-        className="opacity-0 h-0 xl:hidden overflow-hidden max-w-202.75 transition-all duration-500 drop-shadow-pr mt-0 lg:mt-4 project__image"
+        className="opacity-0 h-0 xl:hidden overflow-hidden max-w-202.75 transition-all duration-500 drop-shadow-pr mt-0 project__image"
       >
         <div className="rounded-xl overflow-hidden">
           <img

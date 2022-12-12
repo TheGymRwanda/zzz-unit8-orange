@@ -3,8 +3,8 @@ import Image from "next/image";
 const ProjectTitle = ({ name, openProjectPage, width, active, index }) => {
   return (
     <div
-      className="cursor-pointer relative group flex items-start"
-      onClick={width > 1024 ? openProjectPage : () => {}}
+      className="cursor-pointer relative group flex items-start mb-5.1575 md:mb-4.5 lg:mb-2.9 xl:mb-0"
+      onClick={width > 1024 ? openProjectPage: () =>{}}
     >
       <div className="text-13 leading-16 tracking-tight sm:text-21.5 sm:leading-18 sm:-tracking-tightest">
         {name}
