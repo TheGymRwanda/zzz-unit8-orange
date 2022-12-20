@@ -5,7 +5,7 @@ import ProjectItem from "./ProjectItem";
 import { useState } from "react";
 
 const Projects = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState();
 
   return (
     <Wrapper>
@@ -27,22 +27,22 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div className="hidden xl:block sticky w-full top-10 bg-red-600">
+          <div className="sticky hidden w-full bg-red-600 xl:block top-10">
             {projectsData.map((project, index) => (
               <div
-                className={`overflow-hidden absolute right-0 max-w-202.75 transition-all duration-700 drop-shadow-pr lg:-z-10 ${
+                className={`overflow-hidden absolute right-0 max-w-202.75 xl:max-w-2xl mediumXl:max-w-202.75 transition-all duration-700 drop-shadow-pr lg:-z-10 ${
                   active === index ? "opacity-100" : "opacity-0"
                 }`}
                 key={index}
               >
-                <div className="rounded-xl overflow-hidden">
+                <div className="overflow-hidden rounded-xl">
                   <img
                     src={project.imgUri}
                     className="max-w-full"
                     alt={project.name}
                   />
                 </div>
-                <div className="text-2xl mt-2">{project.description}</div>
+                <div className="mt-2 text-2xl">{project.description}</div>
               </div>
             ))}
           </div>
