@@ -1,36 +1,70 @@
-import { calcLength } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
-import { Stage, Layer, Image, Rect } from "react-konva";
+import { useCallback, useEffect, useRef, useState } from "react";
 import images from "../../../data/gallery";
+import { Stage, Layer, Image, Rect } from "react-konva";
+import { useMediaQuery } from "react-responsive";
 
 const Gallery = () => {
   const [image, setImage] = useState(null);
+  const [isImageVisible, setIsImageVisible] = useState(false);
   const [rectangles, setRectangles] = useState([]);
-  const [canvasWidth, setCanvasWidth] = useState();
-  const [canvasHeight, setCanvasHeight] = useState();
-  // you need other two states oldX and oldY
-  // you also need totalDistance state
+  const [showText, setShowText] = useState(true);
+  const [totalDistance, setTotalDistance] = useState(0);
+  const [oldPointerX, setOldPointerX] = useState(0);
+  const [oldPointerY, setOldPointerY] = useState(0);
+  const [canvasWidth, setCanvasWidth] = useState(0);
+  const [canvasHeight, setCanvasHeight] = useState(window.innerHeight);
 
+  const imageRef = useRef(null);
   const imagesRef = useRef([]);
-  const indexRef = useRef(0);
-  const containerRef = useRef();
+  const previousImage = useRef(null);
+  const currentIndex = useRef(0);
+  const containerRef = useRef(null);
+  const canvasRef = useRef(null);
+
+  const tabletScreen = useMediaQuery({ query: "(max-width: 1024px)" });
+  const mobileScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
-    setImage({
-      image: imagesRef.current[0],
-      width: images[0].width,
-      height: images[0].height,
-      alt: "gallery image",
-    });
-    setCanvasHeight(containerRef.current.clientHeight);
+    // Add an initial image on large screen
+    setImage(
+      tabletScreen
+        ? null
+        : {
+            image: imagesRef.current[0],
+            x: 60,
+            y: 10,
+            width: tabletScreen
+              ? mobileScreen
+                ? images[0].width / 4
+                : images[0].width / 3
+              : images[0].width / 2.2,
+            height: tabletScreen
+              ? mobileScreen
+                ? images[0].height / 4
+                : images[0].width / 3
+              : images[0].height / 2.2,
+          }
+    );
+    setIsImageVisible(!tabletScreen);
+
+    // setting the canvas size to the container size
     setCanvasWidth(containerRef.current.clientWidth);
+    setCanvasHeight(containerRef.current.clientHeight);
 
-  }, []);
+    //handling canvas container size on resize event
+    const resize = () => {
+      setCanvasHeight(containerRef.current.clientHeight);
+      setCanvasWidth(containerRef.current.clientWidth);
+      if (tabletScreen) setCanvasHeight(containerRef.current.clientHeight);
+    };
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
+  }, [tabletScreen, mobileScreen]);
 
-  // calculate position should return x and y that puts the cursor at the center of the image
-  // const calculatePosition = useCallback((event, width, height) => {}, [canvasWidth, canvasHeight]);
-  /*
-  let x = event.nativeEvent.offsetX;
+  // calculates the coordinates of the image
+  const calculatePosition = useCallback(
+    (event, imageHeight, imageWidth) => {
+      let x = event.nativeEvent.offsetX;
       let y = event.nativeEvent.offsetY;
 
       // on Device boundary we touches the boundary instead of being cut
@@ -41,7 +75,7 @@ const Gallery = () => {
           ? 0
           : x - (imageWidth * devicePixelRatio) / 2;
 
-      if (isTablet) {
+      if (tabletScreen) {
         y =
           canvasHeight - y < imageHeight * devicePixelRatio
             ? canvasHeight - imageHeight * devicePixelRatio
@@ -57,83 +91,136 @@ const Gallery = () => {
             : y - (imageHeight * devicePixelRatio) / 2;
       }
       return { x, y };
-  */
+    },
+    [canvasHeight, canvasWidth, tabletScreen]
+  );
 
-  const handleDisplayImage = (e) => {
-    // you need thresholdDistance(constant) to track distance
-    // setTotalDistance(totalDistance + Math.pow(oldY - e.nativeEvent.offsetY, 2) + Math.pow(oldX - e.nativeEvent.offsetX, 2))
-    /* 
-    if (totalDistance >= thresholdDistance) {
-       // set totalDistance back to zero
-       // update rectangles by adding a new object to the array with  x, y, width and height of previous image  
-       // #oldLogic
-       // width =  images[indexRef.current].width
-       // height = images[indexRef.current].height
-       // create a function calculatePosition(event: Event, width: number, height: number) : {x: number, y: number}
-       
+  // updates gray rectangles on the screen
+  const updateRectangles = useCallback(
+    (rectangles) => {
+      if (image) {
+        const newRects = [
+          ...rectangles,
+          { x: image.x, y: image.y, width: image.width, height: image.height },
+        ];
+        setShowText(false);
+        previousImage.current = image;
+        setRectangles(newRects);
+        setImage(null);
+      }
+    },
+    [image]
+  );
+  // handleClick handles
+  const handleClick = (event) => {
+    const pointerThreshold = 200;
+
+    if (!tabletScreen) {
+      setTotalDistance(
+        totalDistance +
+          Math.pow(oldPointerY - event.nativeEvent.offsetY, 2) +
+          Math.pow(oldPointerX - event.nativeEvent.offsetX, 2)
+      );
     }
-    */
-    // set oldX and oldY
-    
 
+    if (tabletScreen || totalDistance >= pointerThreshold) {
+      setTotalDistance(0);
+      setIsImageVisible(true);
+      updateRectangles(rectangles);
+      currentIndex.current += 1;
+      if (currentIndex.current >= images.length) currentIndex.current = 0;
+      let { width, height } = images[currentIndex.current];
 
-    // old implementation #oldLogic
-    // indexRef.current += 1;
-    // if (indexRef.current > images.length - 1) indexRef.current = 0;
+      // on Desktop we take the whole height of the image
+      // on Mobile we take a third of the original height
+      // on Tablet we take half of the original height
+      height = !tabletScreen
+        ? images[currentIndex.current].height / 2.2
+        : mobileScreen
+        ? images[currentIndex.current].height / 4
+        : images[currentIndex.current].height / 3;
 
-    // Don't care about this
-    // console.log(e.nativeEvent.x, e.nativeEvent.y);
-    // setImage({
-    //   x: e.nativeEvent.offsetX,
-    //   y: e.nativeEvent.offsetY,
-    //   image: imagesRef.current[indexRef.current],
-    //   width: images[indexRef.current].width,
-    //   height: images[indexRef.current].height
-    // });
+      // on Desktop we take the whole width of the image
+      // on Mobile we take a third of the original width
+      // on Tablet we take half of the original width
+      width = !tabletScreen
+        ? images[currentIndex.current].width / 2.2
+        : mobileScreen
+        ? images[currentIndex.current].width / 4
+        : images[currentIndex.current].width / 3;
+
+      const { x, y } = calculatePosition(event, height, width);
+      // updating the image state
+      setImage({
+        x,
+        image: imagesRef.current[currentIndex.current],
+        y,
+        isImageVisible: false,
+        width,
+        height,
+      });
+    }
+
+    setOldPointerX(event.nativeEvent.offsetX);
+    setOldPointerY(event.nativeEvent.offsetY);
   };
-
   return (
-    <div className="relative h-screen w-full" ref={containerRef}>
-      <div
-        className="absolute z-50 w-full h-full border-4 border-sky-900"
-        onMouseMove={handleDisplayImage}
-      >
-        <Stage width={canvasWidth} height={canvasHeight}>
+    <div className="w-full mb-12 xl:max-w-page xl:px-16 mx-auto relative">
+      <div className="w-full h-screen relative" ref={containerRef}>
+        <div className="w-0 h-0 opacity-0">
+          {images.map(({ url, width, height }, index) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              ref={(el) => (imagesRef.current[index] = el)}
+              width={width}
+              height={height}
+              src={url}
+              key={index}
+              alt={"gallery image " + index}
+            />
+          ))}
+        </div>
+        <div
+          onClick={tabletScreen ? handleClick : null}
+          onMouseMove={tabletScreen ? null : handleClick}
+          className="w-full bg-opacity-20 h-full z-50 absolute"
+        ></div>
+        {tabletScreen && showText && (
+          <div className="text-center absolute text-xl top-1/2 left-1/2 text-neutral-400 -translate-x-1/2 -translate-y-1/2">
+            Tap anywhere to see more of us
+          </div>
+        )}
+        <Stage
+          ref={canvasRef}
+          width={canvasWidth}
+          height={canvasHeight * devicePixelRatio}
+        >
           <Layer>
-            {
-              rectangles.map(({x, y, width, height}) => (
-                <Rect 
+            {rectangles.length > 0 &&
+              rectangles.map(({ y, x, width, height }, index) => (
+                <Rect
+                  fill="#E4E4E4"
+                  key={index}
                   x={x}
                   y={y}
-                  width={width}
-                  height={height}
-                  fill="#ccc"
+                  width={width * devicePixelRatio}
+                  height={height * devicePixelRatio}
                 />
-              ))
-            }
+              ))}
             {image && (
               <Image
                 image={image.image}
-                width={image.width}
-                height={image.height}
                 x={image.x}
                 y={image.y}
+                width={image.width * devicePixelRatio}
+                height={image.height * devicePixelRatio}
+                ref={imageRef}
+                isImageVisible={isImageVisible}
                 alt="gallery image"
               />
             )}
           </Layer>
         </Stage>
-      </div>
-      <div className="h-0 w-0 opacity-0">
-        {images.map((picture, i) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={picture.url}
-            key={i}
-            ref={(el) => (imagesRef.current[i] = el)}
-            alt="Image"
-          />
-        ))}
       </div>
     </div>
   );
