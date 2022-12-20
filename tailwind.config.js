@@ -52,6 +52,7 @@ module.exports = {
         tighter: "0.015em",
         wide: "0.01em",
         wider: "0.0125em",
+        "tight-l": "0.03em"
       },
       maxHeight: {
         412: "25.75rem",
@@ -70,6 +71,7 @@ module.exports = {
       spacing: {
         sm: "0.188rem",
         0.2: "0.09375rem",
+        0.75: "0.1875rem",
         2.75: "0.6875rem",
         2.9: "0.725rem",
         4.2 : "1.12125rem",
