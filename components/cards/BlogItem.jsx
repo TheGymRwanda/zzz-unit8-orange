@@ -1,8 +1,8 @@
 import Tag from "./../ui/Tag";
 
-const BlogItem = ({ date, title, content, tags }) => {
+const BlogItem = ({ date, title, content, tags, itemRef }) => {
   return (
-    <div className=" border rounded-xl bg-white border-primaryGray-100 p-5 w-119.25 h-100 flex flex-col justify-between gap-[38px] drop-shadow-small">
+    <div ref={itemRef} className="flex-shrink-0 border rounded-xl bg-white border-primaryGray-100 p-5 w-119.25 h-100 flex flex-col justify-between gap-[38px] drop-shadow-small">
       <div>
         <div className="text-primaryGray-400 text-lg -tracking-wide">
           {date}
