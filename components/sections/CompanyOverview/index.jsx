@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ArrowIcon from "../../ui/ArrowIcon";
 import OverviewContent from "./OverviewContent";
-import { motion as Motion } from "framer-motion";
+import { motion } from "framer-motion";
 import companyTabs from "./../../../data/companyTabs";
 import Wrapper from "../../Wrapper";
 
@@ -45,7 +45,7 @@ const CompanyOverview = () => {
                   {item?.title}
                 </button>
                 {index === activeTabIndex ? (
-                  <Motion.div
+                  <motion.div
                     transition={{ duration: 0.3 }}
                     className="absolute mt-0 bottom-1 inset-x-0 h-0.2 bg-purple"
                     layoutId="underline"
