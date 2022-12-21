@@ -10,7 +10,8 @@ function Footer() {
           <p>Ape Unit GmbH</p>
           <p>
             Waldemarstraße 38,
-            <br />
+          </p>
+          <p>
             10999 Berlin
           </p>
         </div>

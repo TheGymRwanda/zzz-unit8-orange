@@ -2,7 +2,7 @@ import LinkItem from "../../ui/LinkItem";
 
 const OverviewContent = ({ content, linkContent, additionalContent }) => {
   return (
-    <div className="text-xl space-y-7 sm:text-2xl -tracking-tighter sm:min-h-412">
+    <div className="text-xl lg:space-y-7 sm:space-y-7.5 space-y-5.5 sm:text-2xl -tracking-tighter sm:min-h-412">
       <div>
         {content}
         <div className="inline-block">
