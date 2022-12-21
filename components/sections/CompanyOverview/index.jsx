@@ -19,8 +19,16 @@ const CompanyOverview = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [activeTabContent, activeTabIndex]);
-  const onTabToggle = (tab) =>
-    tab === activeTabIndex ? setActiveTabIndex(null) : setActiveTabIndex(tab);
+  const onChangeActiveTab = (index, tab) => {
+    setActiveTabIndex(index);
+    setActiveTabContent(tab);
+  };
+  const onTabToggle = (index, tab) => {
+    index === activeTabIndex
+      ? setActiveTabIndex(null)
+      : setActiveTabIndex(index);
+    setActiveTabContent(tab);
+  };
 
   return (
     <Wrapper>
@@ -35,10 +43,7 @@ const CompanyOverview = () => {
                       ? "text-purple"
                       : "text-primaryGray-300"
                   }`}
-                  onClick={() => {
-                    setActiveTabIndex(index);
-                    setActiveTabContent(item);
-                  }}
+                  onClick={() => onChangeActiveTab(index, item)}
                   id={index}
                 >
                   {item?.title}
@@ -61,10 +66,7 @@ const CompanyOverview = () => {
           {companyTabs.map((item, index) => (
             <li className="space-y-4.5" key={index}>
               <div
-                onClick={() => {
-                  onTabToggle(index);
-                  setActiveTabContent(item);
-                }}
+                onClick={() => onTabToggle(index, item)}
                 className={`flex items-center justify-between border-b ${
                   activeTabIndex === index
                     ? "border-purple"
