@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ArrowIcon from "../../ui/ArrowIcon";
 import Wrapper from "../Wrapper";
-import Overview from "./Overview";
+import OverviewContent from "./OverviewContent";
 import { motion as Motion } from "framer-motion";
 import companyTabs from "./../../../data/companyTabs";
 
@@ -54,7 +54,7 @@ const CompanyOverview = () => {
               </li>
             ))}
           </ul>
-          <Overview {...activeTab} />
+          <OverviewContent {...activeTab} />
         </div>
       </div>
       <div className="mt-20.25 mb-17.7 block sm:hidden">
@@ -95,7 +95,7 @@ const CompanyOverview = () => {
               </div>
               {activeTabIndex === index && (
                 <div className="pb-8.4">
-                  <Overview {...activeTab} />
+                  <OverviewContent {...activeTab} />
                 </div>
               )}
             </li>
