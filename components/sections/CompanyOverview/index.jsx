@@ -2,18 +2,16 @@ import { useEffect, useState } from "react";
 import ArrowIcon from "../../ui/ArrowIcon";
 import OverviewContent from "./OverviewContent";
 import { motion } from "framer-motion";
-import companyTabs from "./../../../data/companyTabs";
+import companyTabs from "/data/companyTabs";
 import Wrapper from "../../Wrapper";
 
 const CompanyOverview = () => {
   const [activeTabContent, setActiveTabContent] = useState(companyTabs[0]);
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-  const changeActiveTabMobile = (tab) =>
-    tab === activeTabIndex ? setActiveTabIndex(null) : setActiveTabIndex(tab);
-
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 640 && !activeTabIndex) {
+      const MAX_MOBILE_WIDTH = 640;
+      if (window.innerWidth >= MAX_MOBILE_WIDTH && !activeTabIndex) {
         setActiveTabContent(companyTabs[0]);
         setActiveTabIndex(0);
       }
@@ -21,6 +19,8 @@ const CompanyOverview = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [activeTabContent, activeTabIndex]);
+  const onTabToggle = (tab) =>
+    tab === activeTabIndex ? setActiveTabIndex(null) : setActiveTabIndex(tab);
 
   return (
     <Wrapper>
@@ -32,8 +32,8 @@ const CompanyOverview = () => {
                 <button
                   className={`cursor-pointer text-2xl leading-extra -tracking-tighter transition-all ease-in-out duration-300 ${
                     index === activeTabIndex
-                      ? "text-purple "
-                      : " text-primaryGray-300 "
+                      ? "text-purple"
+                      : "text-primaryGray-300"
                   }`}
                   key={index}
                   onClick={() => {
@@ -63,7 +63,7 @@ const CompanyOverview = () => {
             <li className="space-y-4.5" key={index}>
               <div
                 onClick={() => {
-                  changeActiveTabMobile(index);
+                  onTabToggle(index);
                   setActiveTabContent(item);
                 }}
                 className={`flex items-center justify-between border-b ${
