@@ -6,7 +6,7 @@ import companyTabs from "./../../../data/companyTabs";
 import Wrapper from "../../Wrapper";
 
 const CompanyOverview = () => {
-  const [activeTab, setActiveTab] = useState(companyTabs[0]);
+  const [activeTabContent, setActiveTabContent] = useState(companyTabs[0]);
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const changeActiveTabMobile = (tab) =>
     tab === activeTabIndex ? setActiveTabIndex(null) : setActiveTabIndex(tab);
@@ -14,13 +14,13 @@ const CompanyOverview = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 640 && !activeTabIndex) {
-        setActiveTab(companyTabs[0]);
+        setActiveTabContent(companyTabs[0]);
         setActiveTabIndex(0);
       }
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [activeTab, activeTabIndex]);
+  }, [activeTabContent, activeTabIndex]);
 
   return (
     <Wrapper>
@@ -38,7 +38,7 @@ const CompanyOverview = () => {
                   key={index}
                   onClick={() => {
                     setActiveTabIndex(index);
-                    setActiveTab(item);
+                    setActiveTabContent(item);
                   }}
                   id={index}
                 >
@@ -54,7 +54,7 @@ const CompanyOverview = () => {
               </li>
             ))}
           </ul>
-          <OverviewContent {...activeTab} />
+          <OverviewContent {...activeTabContent} />
         </div>
       </div>
       <div className="mt-20.25 mb-17.7 block sm:hidden">
@@ -64,7 +64,7 @@ const CompanyOverview = () => {
               <div
                 onClick={() => {
                   changeActiveTabMobile(index);
-                  setActiveTab(item);
+                  setActiveTabContent(item);
                 }}
                 className={`flex items-center justify-between border-b ${
                   activeTabIndex === index
@@ -95,7 +95,7 @@ const CompanyOverview = () => {
               </div>
               {activeTabIndex === index && (
                 <div className="pb-8.4">
-                  <OverviewContent {...activeTab} />
+                  <OverviewContent {...activeTabContent} />
                 </div>
               )}
             </li>
