@@ -26,3 +26,4 @@ const ArrowIcon = ({ className }) => {
 };
 
 export default ArrowIcon;
+
