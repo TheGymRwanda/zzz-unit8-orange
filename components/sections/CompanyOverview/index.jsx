@@ -46,7 +46,7 @@ const CompanyOverview = () => {
                   onClick={() => onChangeActiveTab(index, item)}
                   id={index}
                 >
-                  {item?.title}
+                  {item.title}
                 </button>
                 {index === activeTabIndex ? (
                   <motion.div
@@ -58,7 +58,11 @@ const CompanyOverview = () => {
               </li>
             ))}
           </ul>
-          <OverviewContent {...activeTabContent} />
+          <OverviewContent
+            content={activeTabContent.content}
+            linkContent={activeTabContent.linkContent}
+            additionalContent={activeTabContent.additionalContent}
+          />
         </div>
       </div>
       <div className="mt-20.25 mb-17.7 block sm:hidden">
@@ -94,7 +98,11 @@ const CompanyOverview = () => {
               </div>
               {activeTabIndex === index && (
                 <div className="pb-8.4">
-                  <OverviewContent {...activeTabContent} />
+                  <OverviewContent
+                    content={activeTabContent.content}
+                    linkContent={activeTabContent.linkContent}
+                    additionalContent={activeTabContent.additionalContent}
+                  />
                 </div>
               )}
             </li>
