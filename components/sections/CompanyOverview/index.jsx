@@ -82,7 +82,7 @@ const CompanyOverview = () => {
                     activeTabIndex === index ? "text-purple" : ""
                   }`}
                 >
-                  {item?.title}
+                  {item.title}
                 </p>
                 <div
                   className={`transition-all duration-300 ease-out ${
