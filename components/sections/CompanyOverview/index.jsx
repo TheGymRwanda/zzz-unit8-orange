@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import ArrowIcon from "../../ui/ArrowIcon";
-import Wrapper from "../Wrapper";
 import OverviewContent from "./OverviewContent";
 import { motion as Motion } from "framer-motion";
 import companyTabs from "./../../../data/companyTabs";
+import Wrapper from "../../Wrapper";
 
 const CompanyOverview = () => {
   const [activeTab, setActiveTab] = useState(companyTabs[0]);

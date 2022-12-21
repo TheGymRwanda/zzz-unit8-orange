@@ -32,11 +32,9 @@ module.exports = {
         "2.5xl": "1.75rem",
         "5.5xl": "3.25rem",
         "6.5xl": "4rem",
-        16: "4rem",
         13: "3.25rem",
-      },
-      height: {
-        412: "25.75rem",
+        16: "4rem",
+        21.5: "5.375rem",
       },
       lineHeight: {
         extra: "1.66",
@@ -59,9 +57,13 @@ module.exports = {
       },
       maxWidth: {
         "8xl": "90rem",
+        "9xl": "100rem",
         202.75: "50.6875rem",
         201.5: "50.375rem",
         189.25: "47.3125rem",
+      },
+      minHeight: {
+        412: "25.75rem",
       },
       spacing: {
         sm: "0.188rem",
@@ -82,6 +84,7 @@ module.exports = {
         34: "8.5rem",
         35.55: "8.8875rem",
         91: "5.6875rem",
+        121.25: "30.3125rem",
         201.5: "50.375rem",
       },
       dropShadow: {
