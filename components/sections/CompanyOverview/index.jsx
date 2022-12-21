@@ -35,7 +35,6 @@ const CompanyOverview = () => {
                       ? "text-purple"
                       : "text-primaryGray-300"
                   }`}
-                  key={index}
                   onClick={() => {
                     setActiveTabIndex(index);
                     setActiveTabContent(item);
@@ -74,7 +73,7 @@ const CompanyOverview = () => {
               >
                 <p
                   className={`cursor-default text-xl -tracking-wider ${
-                    activeTabIndex === index ? "text-purple " : ""
+                    activeTabIndex === index ? "text-purple" : ""
                   }`}
                 >
                   {item?.title}
@@ -86,9 +85,7 @@ const CompanyOverview = () => {
                 >
                   <ArrowIcon
                     variant={
-                      activeTabIndex === index
-                        ? " text-purple "
-                        : " text-black "
+                      activeTabIndex === index ? "text-purple" : "text-black"
                     }
                   />
                 </div>
