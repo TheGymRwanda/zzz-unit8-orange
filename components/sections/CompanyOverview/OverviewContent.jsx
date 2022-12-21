@@ -1,6 +1,6 @@
 import LinkItem from "../../ui/LinkItem";
 
-const Overview = ({ content, linkContent, additionalContent }) => {
+const OverviewContent = ({ content, linkContent, additionalContent }) => {
   return (
     <div className="text-xl space-y-7 sm:text-2xl -tracking-tighter sm:min-h-412">
       <div>
@@ -19,4 +19,4 @@ const Overview = ({ content, linkContent, additionalContent }) => {
   );
 };
 
-export default Overview;
+export default OverviewContent;
