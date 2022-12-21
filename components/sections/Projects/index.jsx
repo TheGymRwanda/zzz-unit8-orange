@@ -1,4 +1,4 @@
-import projectsData from "/data/projects";
+import projects from "/data/projects";
 import Title from "../../ui/Title";
 import Wrapper from "../../Wrapper";
 import ProjectItem from "./ProjectItem";
@@ -16,7 +16,7 @@ const Projects = () => {
                     <div className="xl:absolute">
                         <div className="flex flex-col relative xl:gap-6.5">
                             {
-                                projectsData.map((project, index) =>(
+                                projects.map((project, index) =>(
                                     <ProjectItem {...project} key={index} index={index} setActive={setActive} active={active} />
                                 ))
                             }
@@ -25,7 +25,7 @@ const Projects = () => {
                 </div>
                 <div className="hidden xl:block sticky w-full top-10 bg-red-600">
                     {
-                        projectsData.map((project, index) =>(
+                        projects.map((project, index) =>(
                             <div
                                 className={`overflow-hidden absolute right-0 max-w-202.75 transition-all duration-700 drop-shadow-pr lg:-z-10 ${active === index ? "opacity-100": "opacity-0"}`}
                                 key={index}
