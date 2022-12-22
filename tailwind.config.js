@@ -12,9 +12,6 @@ module.exports = {
       borderRadius: {
         base: "1.1875rem",
       },
-      boxShadow: {
-        pr: "1px 1px 14px rgba(0, 0, 0, 0.1)",
-      },
       colors: {
         primaryGray: {
           50: "#E2E2E2",
@@ -26,7 +23,7 @@ module.exports = {
         purple: "#5602E0",
       },
       fontFamily: {
-        neuf: ["NeufileGrotesk"],
+        neuf: "NeufileGrotesk",
       },
       fontSize: {
         "2.5xl": "1.75rem",
@@ -37,12 +34,12 @@ module.exports = {
         21.5: "5.375rem",
       },
       lineHeight: {
-        extra: "1.66",
-        light: "1.2308",
         loose: "1.2143",
+        light: "1.2308",
+        tighter: "1.33",
         snug: "1.4",
         "extra-snug": "1.6",
-        tighter: "1.33",
+        extra: "1.66",
         16: "4rem",
         18: "4.5rem",
       },
@@ -52,17 +49,16 @@ module.exports = {
         tighter: "0.015em",
         wide: "0.01em",
         wider: "0.0125em",
-        "tight-l": "0.03em"
       },
       maxHeight: {
         412: "25.75rem",
       },
       maxWidth: {
+        189.25: "47.3125rem",
+        201.5: "50.375rem",
+        202.75: "50.6875rem",
         "8xl": "90rem",
         "9xl": "100rem",
-        202.75: "50.6875rem",
-        201.5: "50.375rem",
-        189.25: "47.3125rem",
       },
       minHeight: {
         412: "25.75rem",
@@ -106,7 +102,7 @@ module.exports = {
 
       },
       dropShadow: {
-        pr: "1px 1px 14px rgba(0, 0, 0, 0.1)",
+        "3xl": "1px 1px 14px rgba(0, 0, 0, 0.1)",
       },
       margin: {
         1.75: "0.4375rem",
