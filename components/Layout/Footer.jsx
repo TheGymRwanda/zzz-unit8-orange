@@ -1,16 +1,17 @@
 import LinkItem from "../ui/LinkItem";
-import Wrapper from "../sections/Wrapper";
+import Wrapper from "../Wrapper";
 import Link from "next/link";
 
 function Footer() {
   return (
     <Wrapper>
-      <div className="flex text-2xl font-neuf space-y-12 lg:space-y-0 lg:justify-between  flex-col lg:flex-row pr-91 pb-12.5 mt-31">
+      <div className="flex text-xl sm:text-2xl font-neuf space-y-12 sm:space-y-0 sm:justify-between flex-col sm:flex-row xl:pr-91 pb-12.5 mt-31">
         <div>
           <p>Ape Unit GmbH</p>
           <p>
             Waldemarstraße 38,
-            <br />
+          </p>
+          <p>
             10999 Berlin
           </p>
         </div>
