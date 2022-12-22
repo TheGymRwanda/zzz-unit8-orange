@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ProjectTitle from "./ProjectTitle";
 
-/* eslint-disable @next/next/no-img-element */
 const ProjectItem = ({
   name,
   imgUri,
