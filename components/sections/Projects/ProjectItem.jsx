@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ProjectTitle from "./ProjectTitle";
 
-/* eslint-disable @next/next/no-img-element */
 const ProjectItem = ({
   name,
   imgUri,
@@ -12,12 +11,10 @@ const ProjectItem = ({
   index,
 }) => {
   const imgRef = useRef();
-  const [width, setWidth] = useState();
+  const [windowWidth, setWindowWidth] = useState();
 
   useEffect(() => {
-    (() => {
-      window && setWidth(window.innerWidth);
-    })();
+    window && setWindowWidth(window.innerWidth);
   }, []);
 
   const openProjectPage = () => window.open(projectUrl, "blank");
@@ -39,7 +36,7 @@ const ProjectItem = ({
         active={active}
         index={index}
         openProjectPage={openProjectPage}
-        width={width}
+        width={windowWidth}
       />
       <div
         ref={imgRef}
@@ -50,7 +47,7 @@ const ProjectItem = ({
             src={imgUri}
             className="max-w-full cursor-pointer"
             alt={name}
-            onClick={width < 1024 ? openProjectPage : () => {}}
+            onClick={windowWidth < 1024 ? openProjectPage : () => {}}
           />
         </div>
         <div className="text-2xl mt-2">{description}</div>
