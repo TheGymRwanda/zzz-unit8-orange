@@ -64,8 +64,7 @@ const Gallery = () => {
           : x - (imageWidth * devicePixelRatio) / 2;
 
       if (tabletScreen) {
-        y =
-          canvasHeight - y < imageHeight * devicePixelRatio
+        y = canvasHeight - y < imageHeight * devicePixelRatio
             ? canvasHeight - imageHeight * devicePixelRatio
             : (imageHeight * devicePixelRatio) / 2 > y
             ? 0
