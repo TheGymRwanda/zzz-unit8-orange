@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Wrapper from "../Wrapper";
+import Wrapper from "../sections/Wrapper";
 import LinkItem from "../ui/LinkItem";
 
 const Header = () => {
