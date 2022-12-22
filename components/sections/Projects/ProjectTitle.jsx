@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const ProjectTitle = ({ name, openProjectPage, width, active, index }) => {
-  const MINIMUM_MOBILE_WIDTH = 1024;
+  const MAXIMUN_SMALL_BREAKPOINTS_WIDTH = 1024;
   return (
     <div
       className="cursor-pointer relative group flex items-start mb-5.1575 md:mb-4.5 lg:mb-2.9 xl:mb-0"
-      onClick={width > MINIMUM_MOBILE_WIDTH ? openProjectPage : null}
+      onClick={width > MAXIMUN_SMALL_BREAKPOINTS_WIDTH ? openProjectPage : null}
     >
       <div className="text-13 leading-16 sm:text-21.5 sm:leading-18 -tracking-tight sm:-tracking-tight-l">
         {name}
