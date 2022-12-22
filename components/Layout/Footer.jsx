@@ -16,15 +16,9 @@ function Footer() {
           </p>
         </div>
         <div>
-          <LinkItem to="https://twitter.com/apeunit" blank>
-            Twitter
-          </LinkItem>
-          <LinkItem to="https://www.facebook.com/apeunit/" blank>
-            Facebook
-          </LinkItem>
-          <LinkItem to="https://de.linkedin.com/company/ape-unit" blank>
-            LinkedIn
-          </LinkItem>
+          <LinkItem to="https://twitter.com/apeunit" blank linkText="Twitter" />
+          <LinkItem to="https://www.facebook.com/apeunit/" blank linkText="Facebook" />
+          <LinkItem to="https://de.linkedin.com/company/ape-unit" blank linkText="Linkedin" />
         </div>
         <div className="flex gap-x-1">
           <Link href="https://apeunit.com/impressum.txt" target="_blank">

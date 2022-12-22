@@ -17,9 +17,7 @@ const Header = () => {
           on 5 continents delivers pioneering work on a global scale with a
           boutique culture.
           <span className="pl-1">
-            <LinkItem to="mailto:web3@apeunit.com" underlined inline>
-              Contact us
-            </LinkItem>
+            <LinkItem to="mailto:web3@apeunit.com" underlined inline linkText="Contact us" />
           </span>
         </div>
       </div>
