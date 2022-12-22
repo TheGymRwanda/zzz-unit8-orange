@@ -14,9 +14,7 @@ const ProjectItem = ({
   const [windowWidth, setWindowWidth] = useState();
 
   useEffect(() => {
-    (() => {
-      window && setWindowWidth(window.innerWidth);
-    })();
+    window && setWindowWidth(window.innerWidth);
   }, []);
 
   const openProjectPage = () => window.open(projectUrl, "blank");
