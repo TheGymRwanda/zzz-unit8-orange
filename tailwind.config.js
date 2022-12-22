@@ -87,6 +87,7 @@ module.exports = {
         15: "3.75rem",
         31: "7.75rem",
         34: "8.5rem",
+        75.5: "18.875rem",
         91: "5.6875rem",
         100: "25.0193rem",
         119.25: "29.8125rem",
@@ -136,7 +137,5 @@ module.exports = {
       padding: {},
     },
   },
-  plugins: [
-    require('tailwind-scrollbar-hide')
-  ],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
