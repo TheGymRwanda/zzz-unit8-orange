@@ -9,9 +9,7 @@ const OverviewContent = ({ content, linkContent, additionalContent }) => {
           <LinkItem
             to="https://medium.com/@moritzfelipe/blockchain-the-internet-for-cooperation-37a606bb3c0"
             underlined
-          >
-            {linkContent}
-          </LinkItem>
+            linkText={linkContent} />
         </div>
       </div>
       <p>{additionalContent}</p>
