@@ -1,4 +1,4 @@
-const projectsData = [
+const projects = [
   {
     name: "Dacade",
     imgUri: "/assets/images/dacade.webp",
@@ -44,4 +44,4 @@ const projectsData = [
   },
 ];
 
-export default projectsData;
+export default projects;
