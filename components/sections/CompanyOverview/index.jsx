@@ -90,7 +90,7 @@ const CompanyOverview = () => {
                   }`}
                 >
                   <ArrowIcon
-                    variant={
+                    className={
                       activeTabIndex === index ? "text-purple" : "text-black"
                     }
                   />
