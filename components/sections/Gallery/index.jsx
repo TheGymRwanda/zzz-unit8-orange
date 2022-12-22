@@ -26,50 +26,38 @@ const Gallery = () => {
 
   useEffect(() => {
     // Add an initial image on large screen
-    setImage(
-      tabletScreen
-        ? null
+    setImage( tabletScreen ? null
         : {
             image: imagesRef.current[0],
             x: 60,
             y: 10,
-            width: tabletScreen
-              ? mobileScreen
-                ? images[0].width / 4
-                : images[0].width / 3
-              : images[0].width / 2.2,
-            height: tabletScreen
-              ? mobileScreen
-                ? images[0].height / 4
-                : images[0].width / 3
-              : images[0].height / 2.2,
+            width: images[0].width / 2.2,
+            height: images[0].height / 2.2,
           }
     );
     setIsImageVisible(!tabletScreen);
 
-    // setting the canvas size to the container size
+    // Adjust the canvas size to the container size
     setCanvasWidth(containerRef.current.clientWidth);
     setCanvasHeight(containerRef.current.clientHeight);
 
-    //handling canvas container size on resize event
+    // adjust the canvas size while resizing screen
     const resize = () => {
       setCanvasHeight(containerRef.current.clientHeight);
       setCanvasWidth(containerRef.current.clientWidth);
-      if (tabletScreen) setCanvasHeight(containerRef.current.clientHeight);
     };
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, [tabletScreen, mobileScreen]);
 
-  // calculates the coordinates of the image
+  // compute the coordinates of the image
   const calculatePosition = useCallback(
     (event, imageHeight, imageWidth) => {
       let x = event.nativeEvent.offsetX;
       let y = event.nativeEvent.offsetY;
 
-      // on Device boundary we touches the boundary instead of being cut
-      x =
-        canvasWidth - x < imageWidth * devicePixelRatio
+      // on canvas boundary, cut the image instead of extending it beyond the canvas
+        x = canvasWidth - x < imageWidth * devicePixelRatio
           ? canvasWidth - imageWidth * devicePixelRatio
           : (imageWidth * devicePixelRatio) / 2 > x
           ? 0
@@ -95,7 +83,7 @@ const Gallery = () => {
     [canvasHeight, canvasWidth, tabletScreen]
   );
 
-  // updates gray rectangles on the screen
+  // paint the gray rectangles
   const updateRectangles = useCallback(
     (rectangles) => {
       if (image) {
@@ -111,7 +99,7 @@ const Gallery = () => {
     },
     [image]
   );
-  // handleClick handles
+  // handleClick 
   const handleClick = (event) => {
     const pointerThreshold = 200;
 
@@ -131,18 +119,14 @@ const Gallery = () => {
       if (currentIndex.current >= images.length) currentIndex.current = 0;
       let { width, height } = images[currentIndex.current];
 
-      // on Desktop we take the whole height of the image
-      // on Mobile we take a third of the original height
-      // on Tablet we take half of the original height
+      // Compute the image height based on the breakpoint
       height = !tabletScreen
         ? images[currentIndex.current].height / 2.2
         : mobileScreen
         ? images[currentIndex.current].height / 4
         : images[currentIndex.current].height / 3;
 
-      // on Desktop we take the whole width of the image
-      // on Mobile we take a third of the original width
-      // on Tablet we take half of the original width
+      // Compute the image width based on the breakpoint
       width = !tabletScreen
         ? images[currentIndex.current].width / 2.2
         : mobileScreen
@@ -150,7 +134,7 @@ const Gallery = () => {
         : images[currentIndex.current].width / 3;
 
       const { x, y } = calculatePosition(event, height, width);
-      // updating the image state
+      // Update the image state
       setImage({
         x,
         image: imagesRef.current[currentIndex.current],
