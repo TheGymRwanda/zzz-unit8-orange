@@ -31,8 +31,8 @@ const Blog = () => {
               }}
             >
               <ArrowIcon
-                variant={`rotate-90 cursor-pointer ${
-                  offset <= 0 ? "" : "text-[#5602E0]"
+                className={`rotate-90 cursor-pointer ${
+                  offset <= 0 ? "" : "text-purple"
                 }`}
               />
             </span>
@@ -44,12 +44,12 @@ const Blog = () => {
               }}
             >
               <ArrowIcon
-                variant={`-rotate-90 mb-0.75 cursor-pointer ${
+                className={`-rotate-90 mb-0.75 cursor-pointer ${
                   offset <
                     itemsContainerRef.current?.scrollWidth -
                       itemsContainerRef.current?.clientWidth ||
                   !itemsContainerRef.current?.clientWidth
-                    ? "text-[#5602E0]"
+                    ? "text-purple"
                     : ""
                 }`}
               />
