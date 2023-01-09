@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ProjectTitle from "./ProjectTitle";
+import Image from "next/image";
 
 const ProjectItem = ({
   name,
@@ -43,7 +44,9 @@ const ProjectItem = ({
         className="opacity-0 h-0 xl:hidden overflow-hidden max-w-202.75 transition-all duration-500 drop-shadow-3xl mt-0 project__image"
       >
         <div className="rounded-xl overflow-hidden">
-          <img
+          <Image
+            width={811}
+            height={444}
             src={imgUri}
             className="max-w-full cursor-pointer"
             alt={name}

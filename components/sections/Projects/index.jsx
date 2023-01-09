@@ -1,4 +1,5 @@
 import projects from "/data/projects";
+import Image from "next/image";
 import Title from "../../ui/Title";
 import Wrapper from "../../Wrapper";
 import ProjectItem from "./ProjectItem";
@@ -9,7 +10,7 @@ const Projects = () => {
 
   return (
     <Wrapper>
-      <div className="xl:mb-31.7 lg:mb-25.95 sm:mb-22.95 mb-20.25 xl:min-h-177 mt-8.25 sm:mt-16.7 lg:mt-26.5 xl:mt-34">
+      <div className="xl:mb-31  lg:mb-25.95 sm:mb-22.95 mb-20.25 xl:min-h-177 mt-8.25 sm:mt-16.7 lg:mt-26.5 xl:mt-34">
         <Title name="Projects" />
         <div className="xl:flex items-start justify-between mt-2.75">
           <div className="xl:h-48">
@@ -36,7 +37,9 @@ const Projects = () => {
                 key={index}
               >
                 <div className="overflow-hidden rounded-xl">
-                  <img
+                  <Image
+                    width={811}
+                    height={444}
                     src={project.imgUri}
                     className="max-w-full"
                     alt={project.name}

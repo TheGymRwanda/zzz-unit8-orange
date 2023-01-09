@@ -3,7 +3,7 @@ import articles from "../../../data/articles";
 import BlogItem from "../../cards/BlogItem";
 import ArrowIcon from "../../ui/ArrowIcon";
 import Title from "../../ui/Title";
-import Wrapper from "../Wrapper";
+import Wrapper from "../../Wrapper";
 
 const Blog = () => {
   const itemRef = useRef();
