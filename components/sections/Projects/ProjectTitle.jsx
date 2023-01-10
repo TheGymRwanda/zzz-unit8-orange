@@ -1,7 +1,8 @@
 import Image from "next/image";
 
+const MAXIMUN_SMALL_BREAKPOINTS_WIDTH = 1024;
+
 const ProjectTitle = ({ name, openProjectPage, width, active, index }) => {
-  const MAXIMUN_SMALL_BREAKPOINTS_WIDTH = 1024;
   return (
     <div
       className="cursor-pointer relative group flex items-start mb-5.1575 md:mb-4.5 lg:mb-2.9 xl:mb-0"
@@ -15,7 +16,7 @@ const ProjectTitle = ({ name, openProjectPage, width, active, index }) => {
           className={`border-b-2 border-black transition-all duration-300 hidden xl:block ${
             active === index ? "w-full translate-x-0" : "-translate-x-full w-0"
           }`}
-        ></div>
+        />
       </div>
       <div
         className={`mt-1.5 transition-all delay-300 duration-300 translate-x-1 translate-y-0 ${
