@@ -5,7 +5,7 @@ const MAXIMUN_SMALL_BREAKPOINTS_WIDTH = 1024;
 const ProjectTitle = ({ name, openProjectPage, width, active, index }) => {
   return (
     <div
-      className="cursor-pointer relative group flex items-start mb-5.1575 md:mb-4.5 lg:mb-2.9 xl:mb-0"
+      className="cursor-pointer relative group flex items-start"
       onClick={width > MAXIMUN_SMALL_BREAKPOINTS_WIDTH ? openProjectPage : null}
     >
       <div className="text-5.5xl leading-16 sm:text-7.8xl sm:leading-18 -tracking-tight sm:-tracking-tightest">
