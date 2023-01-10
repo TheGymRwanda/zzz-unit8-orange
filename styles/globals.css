@@ -7,7 +7,7 @@
   src: url("https://res.cloudinary.com/dllcm941d/raw/upload/v1669109233/NeufileGrotesk-Regular_lq71fv.woff2");
 }
 .project__image--active {
-  @apply h-56 opacity-100 mb-15 sm:h-120 lg:h-121.25;
+  @apply h-56 opacity-100 mb-15 sm:h-120 lg:h-121.25 mt-5.1575 sm:mt-4.5 lg:mt-2.9 xl:mt-0;
   animation: change-height 0.5s 0.4s ease-in infinite;
 }
 

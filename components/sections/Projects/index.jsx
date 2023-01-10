@@ -10,7 +10,7 @@ const Projects = () => {
 
   return (
     <Wrapper>
-      <div className="xl:mb-31 lg:mb-25.95 sm:mb-22.95 mb-20.25 xl:min-h-177 mt-8.25 sm:mt-16.6 lg:mt-26.5 xl:mt-34">
+      <div className="xl:mb-31.7 lg:mb-25.75 sm:mb-22.95 mb-20.25 xl:min-h-177 mt-8.25 sm:mt-16.6 lg:mt-26.5 xl:mt-34">
         <Title name="Projects" />
         <div className="xl:flex items-start justify-between mt-2.75">
           <div className="xl:h-48">
