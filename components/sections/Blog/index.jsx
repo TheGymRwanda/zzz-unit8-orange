@@ -18,7 +18,8 @@ const Blog = () => {
     };
   };
 
-  const areItemsToTheEnd = () => {
+  //function to check whether the blog items are scrolled up to the end of the screen
+  const ItemsAtEndOfScreen = () => {
     return (
       offset <
         itemsContainerRef.current?.scrollWidth -
@@ -54,7 +55,7 @@ const Blog = () => {
             >
               <ArrowIcon
                 className={`-rotate-90 mb-0.75 cursor-pointer ${
-                  areItemsToTheEnd() ? "text-purple" : ""
+                  ItemsAtEndOfScreen() ? "text-purple" : ""
                 }`}
               />
             </span>
