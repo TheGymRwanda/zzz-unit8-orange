@@ -8,7 +8,7 @@ import Wrapper from "../../Wrapper";
 const Blog = () => {
   const itemRef = useRef();
   const itemsContainerRef = useRef();
-  const [offset, setoffset] = useState(0);
+  const [offset, setOffset] = useState(0);
 
   const debounce = (cb) => {
     let timeout;
@@ -16,6 +16,15 @@ const Blog = () => {
       if (timeout) clearTimeout(timeout);
       timeout = setTimeout(cb, 1000);
     };
+  };
+
+  const areItemsToTheEnd = () => {
+    return (
+      offset <
+        itemsContainerRef.current?.scrollWidth -
+          itemsContainerRef.current?.clientWidth ||
+      !itemsContainerRef.current?.clientWidth
+    );
   };
 
   return (
@@ -40,17 +49,12 @@ const Blog = () => {
             <span
               onClick={() => {
                 itemsContainerRef.current.scrollLeft +=
-                  itemRef.current?.clientWidth + 20;
+                  itemRef.current?.clientWidth + 20; // 20 is the width of the blogItem plus the space between the blogItems
               }}
             >
               <ArrowIcon
                 className={`-rotate-90 mb-0.75 cursor-pointer ${
-                  offset <
-                    itemsContainerRef.current?.scrollWidth -
-                      itemsContainerRef.current?.clientWidth ||
-                  !itemsContainerRef.current?.clientWidth
-                    ? "text-purple"
-                    : ""
+                  areItemsToTheEnd() ? "text-purple" : ""
                 }`}
               />
             </span>
@@ -60,10 +64,10 @@ const Blog = () => {
           <div
             className="w-full overflow-x-scroll flex gap-5 scroll-smooth scrollbar-hide"
             ref={itemsContainerRef}
-            onScroll={(e) => debounce(() => setoffset(e.target.scrollLeft))()}
+            onScroll={(e) => debounce(() => setOffset(e.target.scrollLeft))()}
           >
-            {articles.map((item, index) => (
-              <BlogItem key={index} {...item} itemRef={itemRef} />
+            {articles.map((article, index) => (
+              <BlogItem key={index} {...article} itemRef={itemRef} />
             ))}
           </div>
         </div>

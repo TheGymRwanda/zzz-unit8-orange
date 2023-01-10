@@ -1,4 +1,4 @@
-import Tag from "./../ui/Tag";
+import Tag from "../ui/Tag";
 
 const BlogItem = ({ date, title, content, tags, itemRef }) => {
   return (
@@ -16,8 +16,8 @@ const BlogItem = ({ date, title, content, tags, itemRef }) => {
         <p className="text-xl sm:text-2xl -tracking-tighter">{content}</p>
       </div>
       <div className="flex flex-wrap gap-x-6 gap-y-2">
-        {tags.map((item, index) => (
-          <Tag key={index} content={item} />
+        {tags.map((tag, index) => (
+          <Tag key={index} text={tag} />
         ))}
       </div>
     </div>
