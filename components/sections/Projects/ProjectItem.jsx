@@ -50,7 +50,7 @@ const ProjectItem = ({
             src={imgUri}
             className="max-w-full cursor-pointer"
             alt={name}
-            onClick={windowWidth < 1024 ? openProjectPage : () => {}}
+            onClick={windowWidth < 1024 ? openProjectPage : () => null}
           />
         </div>
         <div className="text-2xl mt-2">{description}</div>
