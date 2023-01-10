@@ -8,7 +8,7 @@ const ProjectTitle = ({ name, openProjectPage, width, active, index }) => {
       className="cursor-pointer relative group flex items-start mb-5.1575 md:mb-4.5 lg:mb-2.9 xl:mb-0"
       onClick={width > MAXIMUN_SMALL_BREAKPOINTS_WIDTH ? openProjectPage : null}
     >
-      <div className="text-13 leading-16 sm:text-21.5 sm:leading-18 -tracking-tight sm:-tracking-tightest">
+      <div className="text-5.5xl leading-16 sm:text-7.8xl sm:leading-18 -tracking-tight sm:-tracking-tightest">
         {name}
       </div>
       <div className="overflow-hidden w-full absolute -bottom-1.5 left-0">
