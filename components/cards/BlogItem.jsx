@@ -10,7 +10,7 @@ const BlogItem = ({ date, title, content, tags, itemRef }) => {
         <div className="text-primaryGray-400 text-lg -tracking-wide">
           {date}
         </div>
-        <h5 className="text-2.5xl leading-3.5xl sm:text-4xl sm:leading-4.5xl -tracking-wide mt-6 mb-3">
+        <h5 className="text-2.5xl leading-8.5 sm:text-4xl sm:leading-4.5xl -tracking-wide mt-6 mb-3">
           {title}
         </h5>
         <p className="text-xl sm:text-2xl -tracking-tighter">{content}</p>

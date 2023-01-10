@@ -33,12 +33,12 @@ const CompanyOverview = () => {
   return (
     <Wrapper>
       <div className="justify-end hidden mb-17.7 sm:mt-33 lg:mt-35.55 xl:mt-24 sm:flex">
-        <div className="sm:w-full lg:w-757 xl:w-811">
+        <div className="sm:w-full lg:w-189.25 xl:w-202.75">
           <ul className="flex gap-10.5 items-center py-5 relative">
             {companyTabs.map((item, index) => (
               <li className="relative space-y-5" key={index}>
                 <button
-                  className={`cursor-pointer text-2xl leading-extra -tracking-tighter transition-all ease-in-out duration-300 ${
+                  className={`cursor-pointer text-2xl leading-extra_snug -tracking-tighter transition-all ease-in-out duration-300 ${
                     index === activeTabIndex
                       ? "text-purple"
                       : "text-primaryGray-300"
