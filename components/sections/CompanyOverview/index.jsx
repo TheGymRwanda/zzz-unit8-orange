@@ -8,6 +8,7 @@ import Wrapper from "../../Wrapper";
 const CompanyOverview = () => {
   const [activeTabContent, setActiveTabContent] = useState(companyTabs[0]);
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+
   useEffect(() => {
     const handleResize = () => {
       const MAX_MOBILE_WIDTH = 640;
@@ -19,10 +20,12 @@ const CompanyOverview = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [activeTabContent, activeTabIndex]);
+
   const onChangeActiveTab = (index, tab) => {
     setActiveTabIndex(index);
     setActiveTabContent(tab);
   };
+
   const onTabToggle = (index, tab) => {
     index === activeTabIndex
       ? setActiveTabIndex(null)
@@ -67,10 +70,10 @@ const CompanyOverview = () => {
       </div>
       <div className="mt-20.25 mb-17.7 block sm:hidden">
         <ul className="space-y-5.1">
-          {companyTabs.map((item, index) => (
+          {companyTabs.map((companyTab, index) => (
             <li className="space-y-4.5" key={index}>
               <div
-                onClick={() => onTabToggle(index, item)}
+                onClick={() => onTabToggle(index, companyTab)}
                 className={`flex items-center justify-between border-b ${
                   activeTabIndex === index
                     ? "border-purple"
@@ -82,7 +85,7 @@ const CompanyOverview = () => {
                     activeTabIndex === index ? "text-purple" : ""
                   }`}
                 >
-                  {item.title}
+                  {companyTab.title}
                 </p>
                 <div
                   className={`transition-all duration-300 ease-out ${
